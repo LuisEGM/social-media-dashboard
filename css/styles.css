@@ -13,12 +13,22 @@
 
     --gris: #5f616d;
     --grayCard: #f0f3fa;
+
+    --lightGray: #f8f9fe;
+    --baseBackground: white;
+    --baseColor: #1d2029;
+
+    --cardTitle: #6f717e;
+    --switchSpinner: white;
+
+    --switch: #5f616d;
 }
 
 body{
     margin: 0;
     font-family: 'Inter', sans-serif;
-    color: #1d2029;
+    color: var(--baseColor);
+    background: var(--baseBackground);
 }
 
 .wrapper{
@@ -37,7 +47,7 @@ body{
 }
 
 .checkbox{
-    /* display: none; */
+    display: none;
 }
 
 .checkbox:checked ~ .switch::before{
@@ -49,7 +59,7 @@ body{
     display: block;
     height: 40px;
     border-radius: 20px;
-    background: var(--gris);
+    background: var(--switch);
     width: 80px;
     padding: 5px;
     box-sizing: border-box;
@@ -62,7 +72,7 @@ body{
     display: block;
     width: 30px;
     height: 30px;
-    background: white;
+    background: var(--switchSpinner);
     border-radius: 50%;
     transform: translateX(40px);
     transition: .3s;
@@ -73,7 +83,7 @@ body{
 /* Header */
 
 .header{
-    background: #f8f9fe;
+    background: var(--lightGray);
     padding-bottom: 100px;
     padding-top: 2em;
     border-radius: 0 0 20px 20px;
@@ -141,7 +151,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #6f717e;
+    color: var(--cardTitle);
     font-size: .9em;
     font-weight: bold;
 }
@@ -159,10 +169,11 @@ h1{
     font-size: 50px;
     font-weight: 700;
 }
+
 .card-followers-title{
     display: block;
     text-transform: uppercase;
-    color: var(--gris);
+    color: var(--cardTitle);
     letter-spacing: 5px;
     font-size: .75em;
 }
@@ -207,7 +218,7 @@ h2{
 
 .card-small-views{
     /* border: 1px solid red; */
-    color: var(--gris);
+    color: var(--cardTitle);
     font-weight: bold;
     font-size: .9em;
 }
@@ -292,42 +303,39 @@ h2{
 /* Para dark mode */
 
 @media (prefers-color-scheme: dark) {
-	body{
-		background-color: #1d2029;
-        color: white;
-    }
-
-    .header{
-        background: #1d2029;
-    }
 
     :root{
         --grayCard: #252b43;
+        --baseBackground: #1d2029;
+        --baseColor: white;
         --gris: #8088ad;
+        --lightGray: #1d2029;
+        --cardTitle: #8088ad;
+        --switchSpinner: #282943;
+        --switch: linear-gradient(to right, #4796d2, #37ce8f);
     }
 
-    .card{
+}
 
-    }
 
-    .card-title{
-        color: var(--gris);
-    }
+.is-dark-mode{
+    --grayCard: #252b43;
+    --baseBackground: #1d2029;
+    --baseColor: white;
+    --gris: #8088ad;
+    --lightGray: #1d2029;
+    --cardTitle: #8088ad;
+    --switchSpinner: #282943;
+    --switch: linear-gradient(to right, #4796d2, #37ce8f);
+}
 
-    .card-followers-title{
-        color: #8088ad;
-    }
-
-    .card-small-views{
-        color: #8088ad;
-    }
-
-    .switch{
-        background-image: linear-gradient(to right, #4796d2, #37ce8f);
-    }
-
-    .switch::before{
-        background-color: #282943;
-    }
-
+.is-light-mode{
+    --grayCard: #f0f3fa;
+    --baseBackground: white;
+    --baseColor: #1d2029;
+    --gris: #5f616d;
+    --lightGray: #f8f9fe;
+    --cardTitle: #6f717e;
+    --switchSpinner: white;
+    --switch: #5f616d;
 }
